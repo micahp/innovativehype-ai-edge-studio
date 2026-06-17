@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-studio-950 text-gray-100 antialiased;
+  }
+}
+
+@layer components {
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 
+           hover:bg-studio-900/60 hover:text-gray-200 transition-all duration-200;
+  }
+  .sidebar-link.active {
+    @apply bg-studio-900 text-white font-medium;
+  }
+  
+  .btn-primary {
+    @apply px-4 py-2 bg-studio-600 hover:bg-studio-500 rounded-lg 
+           text-white font-medium transition-colors duration-200 
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .input-field {
+    @apply w-full bg-studio-900 border border-studio-700 rounded-lg px-4 py-3
+           text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 
+           focus:ring-studio-500 focus:border-transparent transition-all;
+  }
+
+  .card {
+    @apply bg-studio-900/60 border border-studio-800 rounded-xl p-4;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { 
+  background: #364fc7; 
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: #4c6ef5; }
+
+/* Typing dots */
+.typing-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #748ffc;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-dot 1.4s infinite ease-in-out both;
+}
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
